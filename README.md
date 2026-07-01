@@ -8,6 +8,7 @@
 - Create a `res://addons/mod_exporter` directory.
 - Search for ["VostokMods Exporter"](https://godotengine.org/asset-library/asset/3764) in the AssetLib and download it.
 - **During installation, press "Change Install Folder" and select the `mod_exporter` folder.**
+- Replace `res://addons/mod_exporter/plugin.cfg` and `res://addons/mod_exporter/plugin.gd` files with corresponding files from this repo.
 - Enable the plugin in Project > Project Settings... > Plugins.
 - New dock panel "Vostok Mod Exporter" will be added to the editor, it will scan for any files named `mod.txt` and add them to the list of mods.
 
