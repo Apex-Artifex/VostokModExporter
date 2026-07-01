@@ -4,6 +4,8 @@
 - Supports blacklists and various options.
 - Unlike exporting through the editor with only selected resources and scenes, it doesn't pull in any unnecessary dependencies like the splash screen, autoloads and any resources referenced by your files outside of the selected directory.
 
+![Vostok Mod Exporter screenshot](https://github.com/Apex-Artifex/VostokModExporter/blob/master/screenshots/VME_screenshot.png)
+
 ## How To Install
 - Create a `res://addons/mod_exporter` directory.
 - Search for ["VostokMods Exporter"](https://godotengine.org/asset-library/asset/3764) in the AssetLib and download it.
