@@ -13,6 +13,7 @@ var dockBtn : Button
 var projectSelect: OptionButton
 var dirline: LineEdit
 var fileline: LineEdit
+var exportBtn: Button
 var progressBar: ProgressBar
 var progressLabel: Label
 var currentLabel: Label
@@ -318,11 +319,11 @@ func _enter_tree() -> void:
     exportBox.size_flags_horizontal = Control.SIZE_EXPAND_FILL
     marginBox.add_child(exportBox)
     
-    var btn = Button.new()
-    btn.text = "Export!"
-    btn.custom_minimum_size = Vector2(100, 0)
-    btn.pressed.connect(exportZip)
-    exportBox.add_child(btn)
+    exportBtn = Button.new()
+    exportBtn.text = "Export!"
+    exportBtn.custom_minimum_size = Vector2(100, 0)
+    exportBtn.pressed.connect(exportZip)
+    exportBox.add_child(exportBtn)
     
     progressBar = ProgressBar.new()
     progressBar.size_flags_horizontal = Control.SIZE_EXPAND_FILL
@@ -417,6 +418,8 @@ func exportZip():
     currentLabel.visible = true
     progressLabel.visible = true
 
+    exportBtn.disabled = true
+
     var i = 1
     for f in files:
         currentLabel.text = "Exporting " + f + "..."
@@ -510,6 +513,7 @@ func exportZip():
     currentLabel.text = "%s exported!" % out #"Done!"
     currentLabel.modulate = Color.LIME
     #OS.shell_show_in_file_manager(ProjectSettings.globalize_path(outDir.path_join(out)))
+    exportBtn.disabled = false
     
     if !exportTextTimer:
         exportTextTimer = get_tree().create_timer(10)
